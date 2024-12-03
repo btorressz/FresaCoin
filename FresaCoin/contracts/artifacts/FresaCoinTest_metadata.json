@@ -1,0 +1,366 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "initialSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rewardRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lockDuration",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "fresaCoin",
+				"outputs": [
+					{
+						"internalType": "contract FresaCoin",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLotteryEntries",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "entries",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLotteryPrizePool",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "prizePool",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					}
+				],
+				"name": "getProposal",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "votesFor",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "votesAgainst",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isApproved",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "testCreateProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testDrawLotteryWinner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "testEnterLottery",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "referrer",
+						"type": "address"
+					}
+				],
+				"name": "testStake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "voteFor",
+						"type": "bool"
+					}
+				],
+				"name": "testVote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "testWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"initialSupply": "The initial token supply",
+						"lockDuration": "Lock duration for staking",
+						"rewardRate": "Reward rate for staking"
+					}
+				},
+				"getLotteryEntries()": {
+					"returns": {
+						"entries": "List of participants"
+					}
+				},
+				"getLotteryPrizePool()": {
+					"returns": {
+						"prizePool": "Total prize pool"
+					}
+				},
+				"getProposal(uint256)": {
+					"params": {
+						"proposalId": "ID of the proposal"
+					},
+					"returns": {
+						"description": "Description of the proposal",
+						"isApproved": "Whether the proposal is approved",
+						"votesAgainst": "Number of votes against",
+						"votesFor": "Number of votes in favor"
+					}
+				},
+				"testCreateProposal(string)": {
+					"params": {
+						"description": "Description of the proposal"
+					}
+				},
+				"testEnterLottery(uint256)": {
+					"params": {
+						"amount": "Amount of tokens to stake for the lottery"
+					}
+				},
+				"testStake(uint256,address)": {
+					"params": {
+						"amount": "Amount of tokens to stake",
+						"referrer": "Referrer address"
+					}
+				},
+				"testVote(uint256,bool)": {
+					"params": {
+						"proposalId": "ID of the proposal",
+						"voteFor": "True to vote for, false to vote against"
+					}
+				},
+				"testWithdraw(uint256)": {
+					"params": {
+						"amount": "Amount of tokens to withdraw"
+					}
+				}
+			},
+			"title": "FresaCoinTest - A test contract for FresaCoin",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Deploy a new FresaCoin contract for testing"
+				},
+				"getLotteryEntries()": {
+					"notice": "Get lottery entries"
+				},
+				"getLotteryPrizePool()": {
+					"notice": "Get the lottery prize pool"
+				},
+				"getProposal(uint256)": {
+					"notice": "Get the details of a proposal"
+				},
+				"testCreateProposal(string)": {
+					"notice": "Test creating a governance proposal"
+				},
+				"testDrawLotteryWinner()": {
+					"notice": "Test drawing a lottery winner"
+				},
+				"testEnterLottery(uint256)": {
+					"notice": "Test entering the lottery"
+				},
+				"testStake(uint256,address)": {
+					"notice": "Test staking tokens"
+				},
+				"testVote(uint256,bool)": {
+					"notice": "Test voting on a proposal"
+				},
+				"testWithdraw(uint256)": {
+					"notice": "Test withdrawing staked tokens"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/FresaCoinTest.sol": "FresaCoinTest"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/draft-IERC6093.sol": {
+			"keccak256": "0x880da465c203cec76b10d72dbd87c80f387df4102274f23eea1f9c9b0918792b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://399594cd8bb0143bc9e55e0f1d071d0d8c850a394fb7a319d50edd55d9ed822b",
+				"dweb:/ipfs/QmbPZzgtT6LEm9CMqWfagQFwETbV1ztpECBB1DtQHrKiRz"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0xbf61ab2ae1d575a17ea58fbb99ca232baddcc4e0eeea180e84cbc74b0c348b31",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4e0968705bad99747a8e5288aa008678c2be2f471f919dce3925a3cc4f1dee09",
+				"dweb:/ipfs/QmbAFnCQfo4tw6ssfQSjhA5LzwHWNNryXN8bX7ty8jiqqn"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe06a3f08a987af6ad2e1c1e774405d4fe08f1694b67517438b467cecf0da0ef7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df6f0c459663c9858b6cba2cda1d14a7d05a985bed6d2de72bd8e78c25ee79db",
+				"dweb:/ipfs/QmeTTxZ7qVk9rjEv2R4CpCwdf8UMCcRqDNMvzNxHc3Fnn9"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x70f2f713b13b7ce4610bcd0ac9fec0f3cc43693b043abcb8dc40a42a726eb330",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c13d13304ac79a83ab1c30168967d19e2203342ebbd6a9bbce4db7550522dcbf",
+				"dweb:/ipfs/QmeN5jKMN2vw5bhacr6tkg78afbTTZUeaacNHqjWt4Ew1r"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"contracts/FresaCoin.sol": {
+			"keccak256": "0x99d757a61f06277150baeec63191ccf85bd2da1f3c37f854aa0d0bbee4da7e0f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b5b59230ab4cf00e9bf5a5f5d6e00e7b2bc6e712c2593dcc9fdbe26a65f10f6f",
+				"dweb:/ipfs/QmSVGp7Nuf6pmfnMCi2zL2DrNZLnxbdHfoN7nmnerLagf5"
+			]
+		},
+		"contracts/FresaCoinTest.sol": {
+			"keccak256": "0x3093ed89b9c0dd24414d7b56279db88f7b3dd1e635d9f3f8f6e03185cc301a6c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ab05591337302f451336ebc71bb062e5d40dd99312b6abab0b7efc89b1be10f4",
+				"dweb:/ipfs/QmTq3iUmr6KRz66abbgStbdT6rMx7YbgSXE8vyUUgShZJJ"
+			]
+		}
+	},
+	"version": 1
+}
